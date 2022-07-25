@@ -1,0 +1,36 @@
+.product {
+  background-color: var(--white-color);
+  margin: 3rem 0px 3rem 1.4rem;
+  padding: 1rem;
+  border: 2px solid silver;
+  box-shadow: 0px 2px 5px 5px rgba(192, 192, 192, 0.65);
+  border-radius: 5px;
+  width: 200px;
+  margin: auto;
+}
+  
+.header{
+  text-align: center;
+  font-size: 1.7rem;
+  margin: 2.3rem 0px;
+}
+
+.product img {
+  width: 120px;
+  height: 150px;
+  padding: 2rem 2rem;
+  margin-left: 8px;
+}
+
+.product h3 {
+  font-size: 1rem;
+}
+
+.product p {
+  padding: 2px 5px;
+  background-color: darkgreen;
+  width: fit-content;
+  border-radius: 3px;
+  color: var(--white-color);
+}
+
