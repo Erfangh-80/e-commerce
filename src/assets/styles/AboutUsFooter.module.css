@@ -1,0 +1,15 @@
+.container {
+  width: 75%;
+  margin: auto;
+}
+
+.header {
+  font-size: 2.2rem;
+  color: var(--white-color);
+}
+
+p {
+  text-align: justify;
+  line-height: 1.5;
+  color: var(--white-color);
+}

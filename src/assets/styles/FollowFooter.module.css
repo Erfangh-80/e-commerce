@@ -1,0 +1,20 @@
+.container{
+    width: 70%;
+    margin: 0px auto;
+}
+
+.content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header{
+    font-size: 2.2rem;
+    color: var(--white-color);
+}
+
+img{
+    width: 30px;
+    cursor: pointer;
+}
