@@ -2,12 +2,11 @@
     width: 100%;
     background-color: #16233f;
     margin: auto;
-    padding-bottom: 2rem;
 }
 
 .container{
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
     justify-content: center;
 }
 
@@ -17,4 +16,10 @@
     font-size: 2.2rem;
     padding-top: 2rem;
     color: var(--white-color);
+}
+
+@media (max-width: 768px){
+    .container{
+        justify-content: center;
+    }
 }
