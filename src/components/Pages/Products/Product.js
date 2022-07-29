@@ -27,14 +27,14 @@ const Product = () => {
         spaceBetween={10}
         loop={true}
         loopFillGroupWithBlank={true}
-        // autoplay={{
-        //   delay: 2500,
-        //   disableOnInteraction: false,
-        // }}
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false,
+        }}
         pagination={{
           clickable: true,
         }}
-        modules={[ Pagination]}
+        modules={[Pagination , Autoplay]}
         breakpoints={{
           1200: {
             slidesPerView: 4,
