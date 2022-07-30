@@ -1,10 +1,10 @@
 import React from 'react';
 
-import Electronics from '../categoryProducts/ElectronicProducts';
-import WomensClothingProducts from '../categoryProducts/WomensClothingProducts';
-import Products from '../Products/Products';
-import Header from './../Header/Header';
-import Footer from './../Footer/Footer';
+import Electronics from '../../template/categoryProducts/ElectronicProducts';
+import WomensClothingProducts from '../../template/categoryProducts/WomensClothingProducts.js';
+import Products from '../../template/Products/Products';
+import Header from './../../template/Header/Header.js';
+import Footer from '../../template/Footer/Footer.js';
 
 const Home = () => {
     return (
