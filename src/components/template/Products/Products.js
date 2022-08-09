@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import Product from "./Product.js";
 import Styles from "../../../assets/styles/Products.module.css";
@@ -8,7 +9,7 @@ const Products = () => {
     <section id={Styles.products}>
       <div className={Styles.container}>
         <Product />
-        <a href="/">More</a>
+        <Link to="/products">More</Link>
       </div>
     </section>
   );
