@@ -10,7 +10,7 @@ const ItemMenu = (props) => {
         <Link to="/homepage">Home</Link>
       </li>
       <li className={Item}>
-        <a href="/">Products</a>
+        <Link to="/products">Products</Link>
       </li>
       <li className={Item}>
         <a href="/">Blogs</a>

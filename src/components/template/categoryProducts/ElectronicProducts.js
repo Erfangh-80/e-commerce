@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 
 import axios from "axios";
-import Product from "./CategoryProduct.js";
+import Product from "../Product/Product.js";
 
-import Styles from "../../../assets/styles/ElectronicProducts.module.css"
+import Styles from "../../../assets/styles/ElectronicProducts.module.css";
 
 const ElectronicProducts = () => {
   const [data, setData] = useState([]);
@@ -17,7 +17,16 @@ const ElectronicProducts = () => {
   return (
     <div className={Styles.container}>
       <h1>Electronic products</h1>
-      <Product products={data}/>
+      <div className={Styles.products}>
+        {data.map((product) => (
+          <Product
+            key={product.id}
+            imageSrc={product.image}
+            price={product.price}
+            title={product.title}
+          />
+        ))}
+      </div>
     </div>
   );
 };

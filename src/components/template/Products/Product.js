@@ -9,7 +9,6 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 
 import Styles from "../../../assets/styles/Product.module.css";
-// import Dress from "../../../assets/icons/product.jpg";
 
 const Product = () => {
   const [products, setProducts] = useState([]);
@@ -34,7 +33,7 @@ const Product = () => {
         pagination={{
           clickable: true,
         }}
-        modules={[Pagination , Autoplay]}
+        modules={[Pagination, Autoplay]}
         breakpoints={{
           1200: {
             slidesPerView: 4,
@@ -52,11 +51,9 @@ const Product = () => {
         className="mySwiper"
       >
         {products.map((product) => (
-          <SwiperSlide key={product.id}>
+          <SwiperSlide className={Styles.swiper} key={product.id}>
             <div className={Styles.product}>
               <img src={product.image} alt="product icon" />
-              <h3>{product.title.split(" ")[0]}</h3>
-              <p>{product.price}</p>
             </div>
           </SwiperSlide>
         ))}

@@ -52,7 +52,7 @@ const HamburgerMenu = (props) => {
             </Link>
           </li>
           <li>
-            <a onClick={clickHandler} href="/">Products</a>
+            <Link onClick={clickHandler} to="/products">Products</Link>
           </li>
           <li>
             <a onClick={clickHandler} href="/">Blogs</a>

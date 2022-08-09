@@ -8,6 +8,7 @@ const Products = () => {
     <section id={Styles.products}>
       <div className={Styles.container}>
         <Product />
+        <a href="/">More</a>
       </div>
     </section>
   );

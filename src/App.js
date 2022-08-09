@@ -7,6 +7,7 @@ import Navbar from './components/template/Navbar/Navbar.js';
 import Home from './components/Pages/Home/HomePage.js';
 import SignUp from './components/Pages/Form/SignUp.js';
 import Login from './components/Pages/Form/Login.js';
+import Products from './components/Pages/Products/Products';
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
           <Route path="/login" component={Login} />
           <Route path="/signup" component={SignUp} />
           <Route path="/homepage" component={Home} />
+          <Route path="/products" component={Products} />
           <Redirect from="/" to="/homepage" />
       </Switch>
     </div>

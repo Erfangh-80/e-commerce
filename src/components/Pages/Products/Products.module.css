@@ -1,15 +1,7 @@
 .container{
-    margin-top: 3rem;
-
-}
-
-.container h1{
-    text-align: center;
-}
-
-.products {
     display: flex;
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
+    padding-top: 100px;
 }

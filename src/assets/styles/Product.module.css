@@ -8,8 +8,8 @@
   width: 200px;
   margin: auto;
 }
-  
-.header{
+
+.header {
   text-align: center;
   font-size: 1.7rem;
   margin: 2.3rem 0px;
@@ -22,15 +22,6 @@
   margin-left: 8px;
 }
 
-.product h3 {
-  font-size: 1rem;
+.swiper{
+  height: 300px;
 }
-
-.product p {
-  padding: 2px 5px;
-  background-color: darkgreen;
-  width: fit-content;
-  border-radius: 3px;
-  color: var(--white-color);
-}
-

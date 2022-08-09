@@ -8,4 +8,10 @@
   margin: auto;
 }
 
-
+.container a{
+  background-color: #175fbd;
+  color: var(--white-color);
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  margin-left: 1.5rem;
+}
