@@ -1,7 +1,4 @@
-import React, { useEffect, useState } from "react";
-
-// Api
-import { getProducts } from "../../../services/Api.js";
+import React, { useContext } from "react";
 
 // template
 import Product from "../../template/Product/Product.js";
@@ -9,25 +6,22 @@ import Product from "../../template/Product/Product.js";
 // styles
 import styles from "./Products.module.css";
 
+// context
+import { ProductsContext } from "../../../context/ProductsContextProvider.js";
+
 const Products = () => {
-  const [products, setProducts] = useState([]);
-
-  useEffect(() => {
-    const getAllProduct = async () => {
-      setProducts(await getProducts())
-    }
-
-    getAllProduct();
-  },[]);
+  const Products = useContext(ProductsContext);
 
   return (
     <div className={styles.container}>
-      {
-          products.map( product => (
-            <Product key={product.id} imageSrc={product.image} price={product.price} title={product.title}/>
-          ))
-      }
-      
+      {Products.map((product) => (
+        <Product
+          key={product.id}
+          imageSrc={product.image}
+          price={product.price}
+          title={product.title}
+        />
+      ))}
     </div>
   );
 };
