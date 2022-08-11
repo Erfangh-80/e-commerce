@@ -1,35 +1,21 @@
 import React from "react";
+import { shorten } from "../../../helper/function";
 
 import styles from "./Product.module.css";
 
-
 const Product = (props) => {
-
-  const { title, imageSrc, price } = props
+  const { title, imageSrc, price } = props;
 
   return (
     <div className={styles.container}>
-      <div className={styles.imageProduct}>
-        <img src={imageSrc} alt=" product icon " />
-      </div>
-
-      <div className={styles.title}>
-        <span>Name: </span>
-        <span>{title?.split(" ")[0]}</span>
-      </div>
-
-      <div className={styles.priceProduct}>
-        <span>Price: </span>
-        <span>{price}</span>
-      </div>
-
-      <div className={styles.counter}>
-        <p>
-          <a href="/">Add to card</a>
-        </p>
-        <p>
-          <a href="/">Detail</a>
-        </p>
+      <img className={styles.cardImage} src={imageSrc} alt=" product " />
+      <h3>{shorten(title)}</h3>
+      <p>{price} $</p>
+      <div className={styles.linkContainer}>
+        <a href="/">Detail</a>
+        <div className={styles.buttonContainer}>
+          <button>Add to Cart</button>
+        </div>
       </div>
     </div>
   );
