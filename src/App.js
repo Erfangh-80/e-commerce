@@ -13,16 +13,16 @@ import ProductsContextProvider from "./context/ProductsContextProvider";
 const App = () => {
   return (
     <div className={Styles.container}>
-      <Navbar />
-      <Switch>
-        <Route path="/login" component={Login} />
-        <Route path="/signup" component={SignUp} />
-        <Route path="/homepage" component={Home} />
-        <ProductsContextProvider>
+      <ProductsContextProvider>
+        <Navbar />
+        <Switch>
+          <Route path="/login" component={Login} />
+          <Route path="/signup" component={SignUp} />
+          <Route path="/homepage" component={Home} />
           <Route path="/products" component={Products} />
-        </ProductsContextProvider>
-        <Redirect from="/" to="/homepage" />
-      </Switch>
+          <Redirect to="/homepage" />
+        </Switch>
+      </ProductsContextProvider>
     </div>
   );
 };
