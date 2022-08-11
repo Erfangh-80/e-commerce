@@ -1,22 +1,29 @@
-import axios from "axios";
 import React, { useEffect, useState } from "react";
 
+// Api
+import { getProducts } from "../../../services/Api.js";
+
+// template
 import Product from "../../template/Product/Product.js";
+
+// styles
 import styles from "./Products.module.css";
 
 const Products = () => {
-  const [data, setData] = useState([]);
+  const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    axios
-      .get("https://fakestoreapi.com/products")
-      .then((response) => setData(response.data));
+    const getAllProduct = async () => {
+      setProducts(await getProducts())
+    }
+
+    getAllProduct();
   },[]);
 
   return (
     <div className={styles.container}>
       {
-          data.map( product => (
+          products.map( product => (
             <Product key={product.id} imageSrc={product.image} price={product.price} title={product.title}/>
           ))
       }

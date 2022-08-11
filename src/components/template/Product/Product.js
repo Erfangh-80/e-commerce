@@ -1,6 +1,6 @@
 import React from "react";
 
-import Styles from "./Product.module.css";
+import styles from "./Product.module.css";
 
 
 const Product = (props) => {
@@ -8,22 +8,22 @@ const Product = (props) => {
   const { title, imageSrc, price } = props
 
   return (
-    <div className={Styles.container}>
-      <div className={Styles.imageProduct}>
+    <div className={styles.container}>
+      <div className={styles.imageProduct}>
         <img src={imageSrc} alt=" product icon " />
       </div>
 
-      <div className={Styles.title}>
+      <div className={styles.title}>
         <span>Name: </span>
         <span>{title?.split(" ")[0]}</span>
       </div>
 
-      <div className={Styles.priceProduct}>
+      <div className={styles.priceProduct}>
         <span>Price: </span>
         <span>{price}</span>
       </div>
 
-      <div className={Styles.counter}>
+      <div className={styles.counter}>
         <p>
           <a href="/">Add to card</a>
         </p>

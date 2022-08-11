@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 
-import axios from "axios";
+// import axios from "axios";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper";
 
@@ -10,15 +10,7 @@ import "swiper/css/navigation";
 
 import Styles from "../../../assets/styles/Product.module.css";
 
-const Product = () => {
-  const [products, setProducts] = useState([]);
-
-  useEffect(() => {
-    axios
-      .get("https://fakestoreapi.com/products?limit=9")
-      .then((response) => setProducts(response.data));
-  }, []);
-
+const Product = ({ data }) => {
   return (
     <div>
       <h1 className={Styles.header}>Products</h1>
@@ -50,8 +42,8 @@ const Product = () => {
         }}
         className="mySwiper"
       >
-        {products.map((product) => (
-          <SwiperSlide className={Styles.swiper} key={product.id}>
+        {data?.map((product) => (
+          <SwiperSlide key={product.id} className={Styles.swiper}>
             <div className={Styles.product}>
               <img src={product.image} alt="product icon" />
             </div>

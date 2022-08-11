@@ -60,13 +60,29 @@
 }
 
 .counter p{
-    background-color: #175fbd;
+    background-color: #1a73e8;
     border-radius: 3px;
     padding: 3px 7px;
 }
 
-.counter a{
-    color: var(--white-color);
-    padding: 5px;
+.counter p:first-child a{
+  color: #fff;
 }
-/* #003c3c */
+
+.counter p:hover{
+  background-color: #004aaa;
+}
+
+.counter p:last-child {
+  background: none;
+  
+}
+
+.counter p:last-child a{
+  color: #1a73e8;
+  font-weight: bold;
+}
+
+.counter p:last-child a:hover{
+  color: #004aaa;
+}

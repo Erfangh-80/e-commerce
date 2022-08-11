@@ -1,24 +1,30 @@
 import React, { useEffect, useState } from "react";
 
-import axios from "axios";
+// template
 import Product from "../Product/Product.js";
 
+// API
+import { getCategoryProducts } from "../../../services/Api.js";
+
+// styles
 import Styles from "../../../assets/styles/ElectronicProducts.module.css";
 
 const WomensClothingProducts = () => {
-  const [data, setData] = useState([]);
+  const [womensClothing, setWomensClothing] = useState([]);
 
   useEffect(() => {
-    axios
-      .get("https://fakestoreapi.com/products/category/women's%20clothing")
-      .then((response) => setData(response.data));
+    const getWomensClothingProducts = async () => {
+      setWomensClothing(await getCategoryProducts("women's clothing"))
+    }
+
+    getWomensClothingProducts();
   });
 
   return (
     <div className={Styles.container}>
       <h1>women's clothing</h1>
       <div className={Styles.products}>
-        {data.map((product) => (
+        {womensClothing.map((product) => (
           <Product
             key={product.id}
             imageSrc={product.image}
