@@ -14,7 +14,7 @@ const ProductsContextProvider = ({children}) => {
         }
 
         fetchApi();
-    })
+    },[])
 
     return (
         <ProductsContext.Provider value={products}>
