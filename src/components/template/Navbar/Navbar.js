@@ -45,7 +45,7 @@ const Navbar = () => {
           alt="menu icon"
         />
 
-        <ItemMenu listItem={Styles.listItem} Item={Styles.item} />
+        <ItemMenu setDropDown={setDropdown} listItem={Styles.listItem} Item={Styles.item} />
         
         {hamburgerMenu && <HamburgerMenu open={hamburgerMenu} setOpen={setHamburgerMenu} />}
         
