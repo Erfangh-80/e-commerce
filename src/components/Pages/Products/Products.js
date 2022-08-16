@@ -11,12 +11,13 @@ import { ProductsContext } from "../../../context/ProductsContextProvider.js";
 
 const Products = () => {
   const Products = useContext(ProductsContext);
-
+  
   return (
     <div className={styles.container}>
       {Products.map((product) => (
         <Product
           key={product.id}
+          id={product.id}
           imageSrc={product.image}
           price={product.price}
           title={product.title}

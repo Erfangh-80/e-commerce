@@ -18,7 +18,7 @@ const WomensClothingProducts = () => {
     }
 
     getWomensClothingProducts();
-  });
+  },[]);
 
   return (
     <div className={Styles.container}>
@@ -27,6 +27,7 @@ const WomensClothingProducts = () => {
         {womensClothing.map((product) => (
           <Product
             key={product.id}
+            id={product.id}
             imageSrc={product.image}
             price={product.price}
             title={product.title}
