@@ -47,18 +47,12 @@ const HamburgerMenu = (props) => {
       <MenuDiv>
         <ul>
           <li>
-            <Link onClick={clickHandler} to="/homepage">
+            <Link  onClick={clickHandler} to="/homepage">
               Home
             </Link>
           </li>
           <li>
             <Link onClick={clickHandler} to="/products">Products</Link>
-          </li>
-          <li>
-            <a onClick={clickHandler} href="/">Blogs</a>
-          </li>
-          <li>
-            <a onClick={clickHandler} href="/">About us</a>
           </li>
           <li>
             <Link onClick={clickHandler} to="/signup">Sign-up</Link>

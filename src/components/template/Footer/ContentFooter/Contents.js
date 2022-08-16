@@ -1,5 +1,6 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
+// styles
 import Styles from "../../../../assets/styles/ContentsFooter.module.css"
 
 const Contents = () => {
@@ -7,10 +8,8 @@ const Contents = () => {
         <div className={Styles.container}>
             <h1 className={Styles.header}>Constents</h1>
             <ul className={Styles.items}>
-                <li><a href='/#'>Products</a></li>
-                <li><a href='/#'>About Us</a></li>
-                <li><a href='/#'>Sign Up</a></li>
-                <li><a href='/#'>shoping card</a></li>
+                <li><Link to='/products'>Products</Link></li>
+                <li><Link to='/signup'>Sign Up</Link></li>
             </ul>
         </div>
     );
