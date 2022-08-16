@@ -60,7 +60,9 @@ const cartReducer = (state, action) => {
             itemCounter: 0,
             totalPrice: 0,
             checkout: false,
-        }        
+        }  
+    default:
+      return state      
   }
 };
 
