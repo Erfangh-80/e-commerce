@@ -50,8 +50,10 @@ const Navbar = () => {
         {hamburgerMenu && <HamburgerMenu open={hamburgerMenu} setOpen={setHamburgerMenu} />}
         
         <ul className={Styles.items}>
-          <li className={Styles.item}>
-            <img src={ShopIcon} alt="shop icon" />
+          <li >
+            <Link to="/cart">
+              <img src={ShopIcon} alt="shop icon" />
+            </Link>
           </li>
           <li onClick={() => setDropdown(!dropdown)} className={Styles.item}>
             <img className={Styles.user} src={UserIcon} alt="user icon" />
