@@ -16,6 +16,13 @@ const initialState = {
   checkout: false,
 };
 
+const setItem = (items) => {
+  const itemCounter = items.reduce((total, product) => total + product.quantity, 0);
+  const total = items.reduce((total, product) => total + product.price * product.quantity,0).toFixed(2);
+  return {itemCounter, total}
+}
+
+
 const cartReducer = (state, action) => {
   switch (action.type) {
     case ACTIONS.ADD_ITEM:
@@ -28,24 +35,29 @@ const cartReducer = (state, action) => {
       return {
         ...state,
         selectedItems: [...state.selectedItems],
+        ...setItem(state.selectedItems),
+        checkout: false
       };
     case ACTIONS.REMOVE_ITEM:
       const newSelectedItems = state.selectedItems.filter((item) => item.id !== action.payload.id);
       return {
         ...state,
         selectedItems: [...newSelectedItems],
+        ...setItem(state.selectedItems),
       };
     case ACTIONS.INCREASE:
       const IndexI = state.selectedItems.findIndex((item) => item.id === action.payload.id);
       state.selectedItems[IndexI].quantity++;
       return {
         ...state,
+        ...setItem(state.selectedItems),
       };
     case ACTIONS.DECREASE:
       const IndexD = state.selectedItems.findIndex((item) => item.id === action.payload.id);
       state.selectedItems[IndexD].quantity--;
       return {
         ...state,
+        ...setItem(state.selectedItems),
       };
     case ACTIONS.CHECKOUT:
         return{
