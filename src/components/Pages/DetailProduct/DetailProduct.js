@@ -1,17 +1,25 @@
-import React, { useContext } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 
-// context
-import { ProductsContext } from "../../../context/ProductsContextProvider";
+// Api
+import { getProduct } from "../../../services/Api";
 // styles
 import styles from "./DetailProduct.module.css";
 
 const DetailProduct = () => {
-  const params = useParams()
-  const id = params.id
-  const products = useContext(ProductsContext);
-  const product = products.find(item => item.id === +id)
+  const [product, setProducts] = useState([])
+  const params = useParams();
+  const id = params.id;
+
+  useEffect(() => {
+    const fetchProduct = async () => {
+      setProducts(await getProduct(id))
+    }
+
+    fetchProduct();
+  },[])
+
   return (
     <div className={styles.container}>
       <img className={styles.image} src={product.image} alt="" />
