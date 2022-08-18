@@ -9,20 +9,27 @@ import styles from "./Products.module.css";
 // context
 import { ProductsContext } from "../../../context/ProductsContextProvider.js";
 
+// icons
+import loading from "../../../assets/icons/loading.gif";
+
 const Products = () => {
   const Products = useContext(ProductsContext);
-  
+
   return (
     <div className={styles.container}>
-      {Products.map((product) => (
-        <Product
-          key={product.id}
-          id={product.id}
-          imageSrc={product.image}
-          price={product.price}
-          title={product.title}
-        />
-      ))}
+      {!Products.length ? (
+        <img className={styles.loading} src={loading} alt="loading" />
+      ) : (
+        Products.map((product) => (
+          <Product
+            key={product.id}
+            id={product.id}
+            imageSrc={product.image}
+            price={product.price}
+            title={product.title}
+          />
+        ))
+      )}
     </div>
   );
 };

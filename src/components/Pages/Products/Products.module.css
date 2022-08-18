@@ -5,3 +5,7 @@
     flex-wrap: wrap;
     padding-top: 100px;
 }
+
+.loading {
+    width: 200px;
+}
