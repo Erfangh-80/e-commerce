@@ -27,6 +27,7 @@ const Product = (props) => {
             ? <button className={styles.smallButton} onClick={() => dispatch({type: ACTIONS.INCREASE, payload: props})}>+</button>
             : <button onClick={() => dispatch({type: ACTIONS.ADD_ITEM, payload: props})}>Add to Cart</button>
           }
+          {quantityCount(state, id) > 0 && <span className={styles.counter}>{quantityCount(state, id)}</span>}
           {quantityCount(state, id) === 1 && <button className={styles.smallButton} onClick={() => dispatch({type: ACTIONS.REMOVE_ITEM, payload: props})}><img src={trash} alt="trash"/></button>}
           {quantityCount(state, id) > 1 && <button className={styles.smallButton} onClick={() => dispatch({type: ACTIONS.DECREASE, payload: props})}>-</button>}
         </div>
