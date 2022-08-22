@@ -21,10 +21,10 @@ const sumItem = (items) => {
     (total, product) => total + product.quantity,
     0
   );
-  const total = items
+  const totalPrice = items
     .reduce((total, product) => total + product.price * product.quantity, 0)
     .toFixed(2);
-  return { itemCounter, total };
+  return { itemCounter, totalPrice };
 };
 
 const cartReducer = (state, action) => {
