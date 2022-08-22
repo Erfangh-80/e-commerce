@@ -1,5 +1,5 @@
 import React from "react";
-import { Switch, Route, Redirect } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 
 // styles
 import Styles from "./App.css";
@@ -21,16 +21,16 @@ const App = () => {
       <Navbar />
       <ProductsContextProvider>
         <CartContextProvider>
-          <Switch>
-            <Route path="/login" component={Login} />
-            <Route path="/signup" component={SignUp} />
-            <Route path="/homepage" component={Home} />
-            <Route path="/products" component={Products} />
-            <Route path="/cart" component={ShopCart} />
-            <Route path="/detailproduct/:id" component={DetailProduct} />
-            <Route path="/detailproduct" component={DetailProduct} />
-            <Redirect to="/homepage" />
-          </Switch>
+          <Routes>
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<SignUp />} />
+            <Route path="/homepage" element={<Home />} />
+            <Route path="/products" element={<Products />} />
+            <Route path="/cart" element={<ShopCart />} />
+            <Route path="/detailproduct/:id" element={<DetailProduct />} />
+            <Route path="/detailproduct" element={<DetailProduct />} />
+            <Route path="/*" element={<Navigate to="/homepage" />} />
+          </Routes>
         </CartContextProvider>
       </ProductsContextProvider>
     </div>
