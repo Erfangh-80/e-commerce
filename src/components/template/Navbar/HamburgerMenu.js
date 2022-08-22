@@ -35,6 +35,10 @@ const MenuDiv = styled.div`
   a {
     color: var(--white-color);
   }
+
+  @media (max-width: 400px){
+    width: 80%;
+  }
 `;
 
 const HamburgerMenu = (props) => {
