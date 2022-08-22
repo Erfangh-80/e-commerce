@@ -13,23 +13,27 @@ import { ProductsContext } from "../../../context/ProductsContextProvider.js";
 import loading from "../../../assets/icons/loading.gif";
 
 const Products = () => {
-  const Products = useContext(ProductsContext);
+  
+  const products = useContext(ProductsContext);
+
 
   return (
-    <div className={styles.container}>
-      {!Products.length ? (
-        <img className={styles.loading} src={loading} alt="loading" />
-      ) : (
-        Products.map((product) => (
-          <Product
-            key={product.id}
-            id={product.id}
-            imageSrc={product.image}
-            price={product.price}
-            title={product.title}
-          />
-        ))
-      )}
+    <div>
+      <div className={styles.container}>
+        {!products.length ? (
+          <img className={styles.loading} src={loading} alt="loading" />
+        ) : (
+          products.map((product) => (
+            <Product
+              key={product.id}
+              id={product.id}
+              imageSrc={product.image}
+              price={product.price}
+              title={product.title}
+            />
+          ))
+        )}
+      </div>
     </div>
   );
 };
