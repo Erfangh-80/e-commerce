@@ -8,17 +8,17 @@ import { getProduct } from "../../../services/Api";
 import styles from "./DetailProduct.module.css";
 
 const DetailProduct = () => {
-  const [product, setProducts] = useState([])
+  const [product, setProducts] = useState([]);
   const params = useParams();
   const id = params.id;
 
   useEffect(() => {
     const fetchProduct = async () => {
-      setProducts(await getProduct(id))
-    }
+      setProducts(await getProduct(id));
+    };
 
     fetchProduct();
-  },[])
+  }, [id]);
 
   return (
     <div className={styles.container}>
