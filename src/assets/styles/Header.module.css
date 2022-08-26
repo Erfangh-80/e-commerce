@@ -1,93 +1,49 @@
-#header {
-  width: 100%;
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
   height: 100vh;
-  background: url("../icons/banner-eCommerce.jpg") center center no-repeat;
-  background-size: cover;
+  background-color: rgb(7, 67, 151);
 }
 
-.container {
-  padding: 3rem 2.5rem;
-  height: 100%;
+.logoBanner {
+  width: 50%;
+}
+
+.logoBanner img {
+  width: 65%;
 }
 
 .header {
   width: 50%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  margin-top: -3rem;
-  justify-content: center;
 }
 
-.header h1 {
-  color: silver;
-  font-size: 5.4rem;
-}
-
-.header h3 {
-  color: #bc812f;
-}
-
-@media (max-width: 1200px) {
-
-  .header{
-    justify-content: flex-start;
-    margin-top: 3rem;
-    width: 40%;
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
   }
 
-  .header h1{
-    font-size: 4rem;
+  .logoBanner {
+    width: 100%;
   }
 
+  .logoBanner img {
+    width: 50%;
+    text-align: center;
+  }
+
+  .header {
+    width: 100%;
+  }
 }
 
-
-@media (max-width: 920px){
-    
-    .header {
-        justify-content: center;
-        margin-top: -1.2rem;
-        width: 50%;
-    }
-    
-    .header h1{
-        font-size: 3.5rem;
-    } 
-}
-
-@media (max-width: 768px){
-
-    .header{
-        justify-content: flex-start;
-        width: 100%;
-    }
-
-    .header h1{
-        font-size: 3rem;
-        text-align: center;
-    }   
-
-    .header h3{
-        text-align: center;
-    }   
-}
-
-@media (max-width: 480px){
-    
-    .header{
-        justify-content: flex-start;
-        margin-top: 1rem;
-        width: 100%;
-    }
-
-    .header h1{
-        font-size: 1.5rem;
-        text-align: center;
-    }
-
-    .header h3{
-        font-size: 1.5rem;
-        text-align: center;
-    }
+@media (max-width: 480px) {
+  .logoBanner img {
+    width: 100%;
+    text-align: center;
+  }
 }
