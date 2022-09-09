@@ -17,6 +17,7 @@
 
 .header {
   width: 50%;
+  color: #fff;
 }
 
 @media (max-width: 768px) {
